@@ -73,3 +73,12 @@ h1 {
   font-size: 0.9em;
 }
 
+.intro {
+  max-width: 560px;
+  margin: 0 auto 18px;
+}
+
+.optional-note {
+  max-width: 520px;
+  margin: 0 auto 35px;
+}
