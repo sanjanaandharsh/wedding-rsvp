@@ -1,1 +1,63 @@
+body {
+  font-family: "Georgia", serif;
+  background: #faf7f3;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.container {
+  max-width: 700px;
+  margin: 50px auto;
+  padding: 30px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+h1, h2 {
+  font-weight: normal;
+}
+
+.honeymoon-box, .payment-box {
+  margin-top: 30px;
+  padding: 20px;
+  background: #fdf3ea;
+  border-radius: 8px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: #c89b6a;
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+}
+
+.btn:hover {
+  background: #b1875a;
+}
+
+.skip {
+  margin-top: 15px;
+  font-size: 0.9em;
+}
+
+.skip a {
+  color: #777;
+  text-decoration: none;
+}
+
+.qr {
+  width: 200px;
+  margin: 20px 0;
+}
+
+.closing {
+  margin-top: 40px;
+  font-style: italic;
+}
 
