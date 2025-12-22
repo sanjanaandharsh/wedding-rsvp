@@ -110,3 +110,20 @@ h3 {
     width: 180px;
   }
 }
+
+
+.btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 25px;
+  background: #c89b6a;
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #b1875a;
+}
+
