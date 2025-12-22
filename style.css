@@ -8,56 +8,60 @@ body {
 
 .container {
   max-width: 700px;
-  margin: 50px auto;
-  padding: 30px;
+  margin: 60px auto;
+  padding: 40px 30px;
   background: white;
-  border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  border-radius: 12px;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.08);
   text-align: center;
 }
 
-h1, h2 {
+h1 {
   font-weight: normal;
+  margin-bottom: 20px;
 }
 
-.honeymoon-box, .payment-box {
-  margin-top: 30px;
-  padding: 20px;
+.intro {
+  font-size: 1.05em;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.optional-note {
+  font-size: 0.95em;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.payment-box {
+  padding: 25px;
   background: #fdf3ea;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
-.btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 25px;
-  background: #c89b6a;
-  color: white;
-  text-decoration: none;
-  border-radius: 25px;
-}
-
-.btn:hover {
-  background: #b1875a;
-}
-
-.skip {
-  margin-top: 15px;
-  font-size: 0.9em;
-}
-
-.skip a {
-  color: #777;
-  text-decoration: none;
+.payment-box h2 {
+  margin-top: 0;
 }
 
 .qr {
   width: 200px;
+  margin: 20px auto;
+  display: block;
+}
+
+.divider {
   margin: 20px 0;
+  font-style: italic;
+  color: #888;
+}
+
+.bank-details {
+  line-height: 1.6;
+  font-size: 0.95em;
 }
 
 .closing {
   margin-top: 40px;
   font-style: italic;
+  color: #555;
 }
-
