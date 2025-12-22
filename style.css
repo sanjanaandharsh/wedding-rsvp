@@ -65,3 +65,11 @@ h1 {
   font-style: italic;
   color: #555;
 }
+
+.vietnam-accent {
+  margin: 15px 0 30px;
+  color: #c89b6a;
+  letter-spacing: 6px;
+  font-size: 0.9em;
+}
+
