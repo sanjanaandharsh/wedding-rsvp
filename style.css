@@ -8,9 +8,20 @@
 body {
   margin: 0;
   font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  background: #0b0c1a; /* deep black/navy */
-  color: #f8f8f8; /* soft white text */
+  background: #93c572; /* pista green */
+  color: #7b0323; /* wine color */
   min-height: 100vh;
+}
+
+/* --------------------
+   Message above form
+-------------------- */
+.rsvp-message {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #7b0323; /* wine color */
+  margin-bottom: 12px;
+  line-height: 1.4;
 }
 
 /* --------------------
@@ -20,9 +31,12 @@ body {
   max-width: 420px;
   margin: 32px auto;
   padding: 28px 22px 34px;
-  background: #0d0e1f; /* deep black/navy */
+  background: #fff; /* keep white so it stands out on green */
   border-radius: 26px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.08),
+    0 0 0 1px rgba(155, 200, 160, 0.3); /* soft green accent */
+  animation: floatIn 0.6s ease-out;
 }
 
 /* --------------------
@@ -32,7 +46,7 @@ h1 {
   text-align: center;
   font-size: 2.1rem;
   margin-bottom: 14px;
-  color: #f8f8f8; /* soft white */
+  color: #7b0323; /* wine color */
   letter-spacing: 0.5px;
 }
 
@@ -58,7 +72,7 @@ form {
 label {
   font-size: 0.85rem;
   font-weight: 700;
-  color: #f8f8f8; /* soft white */
+  color: #7b0323; /* wine color */
   margin-bottom: -8px;
 }
 
@@ -71,21 +85,24 @@ select {
   padding: 15px 16px;
   font-size: 1rem;
   border-radius: 16px;
-  border: 2px solid #f8f8f8; /* soft white border */
-  background: #0d0e1f; /* dark box */
-  color: #f8f8f8; /* soft white text */
+  border: 2px solid #cce5b3; /* soft green */
+  background: #fff;
+  color: #7b0323; /* wine color for text input */
   transition: all 0.25s ease;
 }
 
 input::placeholder {
-  color: #bbb; /* lighter placeholder */
+  color: #a55b6f; /* softer wine for placeholder */
 }
 
 input:focus,
 select:focus {
   outline: none;
-  border-color: #ffffff; /* brighter on focus */
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.15);
+  border-color: #7b0323; /* wine accent */
+  box-shadow:
+    0 0 0 4px rgba(123, 3, 35, 0.2),
+    0 6px 14px rgba(123, 3, 35, 0.15);
+  transform: translateY(-1px);
 }
 
 /* --------------------
@@ -95,8 +112,8 @@ select:focus {
   margin-top: 6px;
   padding: 18px;
   border-radius: 20px;
-  background: #0d0e1f; /* same dark container */
-  border: 2px solid #f8f8f8; /* soft white border */
+  background: linear-gradient(135deg, #eaf3e1, #ffffff); /* light pista gradient */
+  border: 2px dashed #cce5b3;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -113,54 +130,21 @@ button {
   border-radius: 999px;
   border: none;
   cursor: pointer;
-  color: #f8f8f8;
-  background: #0d0e1f; /* black/navy button */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+  color: white;
+  background: linear-gradient(135deg, #7b0323, #a42b45); /* wine gradient */
+  background-size: 200% 200%;
+  box-shadow: 0 14px 30px rgba(123, 3, 35, 0.4);
   transition: all 0.25s ease;
 }
 
 button:hover {
-  background: #11122a; /* slightly lighter on hover */
-  transform: translateY(-2px);
+  background-position: right center;
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 20px 36px rgba(123, 3, 35, 0.5);
 }
 
 button:active {
   transform: translateY(0);
-}
-
-/* --------------------
-   Text Pages
--------------------- */
-.intro {
-  text-align: center;
-  font-size: 1.05rem;
-  margin: 20px 0;
-  color: #f8f8f8;
-}
-
-.optional-note {
-  text-align: center;
-  font-size: 0.95rem;
-  color: #f8f8f8;
-  margin-bottom: 26px;
-}
-
-/* --------------------
-   Primary CTA Button
--------------------- */
-.btn {
-  display: block;
-  text-align: center;
-  padding: 16px 26px;
-  border-radius: 999px;
-  background: #0d0e1f;
-  color: #f8f8f8;
-  text-decoration: none;
-  font-size: 1.05rem;
-  font-weight: 700;
-  margin: 0 auto;
-  max-width: 320px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
 }
 
 /* --------------------
@@ -170,15 +154,21 @@ button:active {
   margin-top: 30px;
   padding: 24px;
   border-radius: 24px;
-  background: #0d0e1f; /* dark box */
-  border: 2px solid #f8f8f8; /* soft white border */
-  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(180deg, #ffffff, #eaf3e1); /* pista gradient */
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.08);
   text-align: center;
+  color: #7b0323;
 }
 
-.payment-box h2,
+.payment-box h2 {
+  margin-top: 0;
+  color: #7b0323;
+}
+
 .payment-box h3 {
-  color: #f8f8f8;
+  margin-top: 20px;
+  font-size: 1rem;
+  color: #7b0323;
 }
 
 /* --------------------
@@ -190,7 +180,7 @@ button:active {
   margin: 20px auto;
   display: block;
   border-radius: 18px;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.15);
 }
 
 /* --------------------
@@ -199,7 +189,7 @@ button:active {
 .divider {
   margin: 20px 0;
   font-size: 0.85rem;
-  color: #f8f8f8;
+  color: #7b0323;
 }
 
 /* --------------------
@@ -208,7 +198,7 @@ button:active {
 .bank-details {
   font-size: 0.9rem;
   line-height: 1.7;
-  color: #f8f8f8;
+  color: #7b0323;
 }
 
 /* --------------------
@@ -218,7 +208,7 @@ button:active {
   text-align: center;
   margin: 16px 0;
   font-size: 1.1rem;
-  color: #2ca6a4; /* subtle accent */
+  color: #a42b45; /* darker wine accent */
 }
 
 /* --------------------
@@ -228,7 +218,7 @@ button:active {
   margin-top: 28px;
   font-size: 0.95rem;
   text-align: center;
-  color: #f8f8f8;
+  color: #7b0323;
 }
 
 /* --------------------
