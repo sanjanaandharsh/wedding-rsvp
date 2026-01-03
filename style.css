@@ -1,33 +1,56 @@
 /* --------------------
-   Base & Background
+   Reset & Base
 -------------------- */
-body {
+* {
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
+}
+
+body {
   font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  background: linear-gradient(160deg, #d8e6c3, #eaf7e0); /* pista green gradient */
-  color: #800020; /* wine color */
+  background: linear-gradient(160deg, #d4f1be, #e6f7e0, #f0fff5); /* Pista green shades */
+  color: #6b0f1a; /* Wine color for text */
   min-height: 100vh;
+  background-attachment: fixed;
 }
 
 /* --------------------
    Container Card
 -------------------- */
 .container {
-  max-width: 480px;
+  max-width: 450px;
   margin: 32px auto;
-  padding: 30px 26px 36px;
+  padding: 32px 26px 36px;
   background: #ffffff;
   border-radius: 26px;
-  box-shadow:
-    0 20px 40px rgba(0,0,0,0.08),
-    0 0 0 1px rgba(160, 30, 45, 0.15); /* subtle wine accent */
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08), 0 0 0 1px rgba(107, 15, 26, 0.1);
+  animation: floatIn 0.6s ease-out;
 }
 
 /* --------------------
-   Headings
+   Float animation
 -------------------- */
-h1, h2, h3 {
-  color: #800020; /* wine color */
+@keyframes floatIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --------------------
+   Heading
+-------------------- */
+h1 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+  color: #6b0f1a; /* wine */
+  letter-spacing: 0.5px;
 }
 
 h1::after {
@@ -38,46 +61,159 @@ h1::after {
 }
 
 /* --------------------
-   Buttons
+   RSVP message on top
 -------------------- */
-button, .btn {
-  color: white;
-  background: linear-gradient(135deg, #800020, #b22222); /* wine gradient */
-  border-radius: 999px;
-  font-weight: 700;
-  padding: 16px 26px;
-  box-shadow: 0 12px 28px rgba(128, 0, 32, 0.4);
-}
-
-button:hover, .btn:hover {
-  transform: translateY(-2px) scale(1.01);
-  box-shadow: 0 16px 32px rgba(128, 0, 32, 0.5);
+.rsvp-message {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #6b0f1a;
+  margin-bottom: 14px;
+  line-height: 1.4;
 }
 
 /* --------------------
-   Input & Select
+   Form Layout
 -------------------- */
-input, select {
-  border: 2px solid #c3e6a8; /* soft green border */
-  border-radius: 16px;
-  padding: 14px 16px;
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
 }
 
-input:focus, select:focus {
-  border-color: #6b1b34; /* wine on focus */
-  box-shadow: 0 0 0 4px rgba(128,0,32,0.2);
+/* --------------------
+   Labels
+-------------------- */
+label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #6b0f1a;
+  margin-bottom: -6px;
+}
+
+/* --------------------
+   Inputs & Selects
+-------------------- */
+input,
+select {
+  width: 100%;
+  padding: 15px 18px;
+  font-size: 1rem;
+  border-radius: 16px;
+  border: 2px solid #a2d5ab; /* light pista green */
+  background: #fff;
+  transition: all 0.25s ease;
+}
+
+input::placeholder {
+  color: #a88f99;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #6b0f1a;
+  box-shadow: 0 0 0 4px rgba(107,15,26,0.15), 0 6px 14px rgba(107,15,26,0.12);
+  transform: translateY(-1px);
+}
+
+/* --------------------
+   Conditional Section (attending yes)
+-------------------- */
+#yes-fields {
+  margin-top: 10px;
+  padding: 20px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #f0fff5, #ffffff);
+  border: 2px dashed #a2d5ab;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* --------------------
+   Submit Button
+-------------------- */
+button {
+  margin-top: 20px;
+  padding: 17px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  background: linear-gradient(135deg, #6b0f1a, #f28c65); /* wine → coral gradient */
+  background-size: 200% 200%;
+  box-shadow: 0 14px 30px rgba(107,15,26,0.4);
+  transition: all 0.25s ease;
+}
+
+button:hover {
+  background-position: right center;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 20px 36px rgba(107,15,26,0.5);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* --------------------
+   Text Pages (Honeymoon / Thank You)
+-------------------- */
+.intro {
+  text-align: center;
+  font-size: 1.05rem;
+  margin: 20px 0;
+  color: #6b0f1a;
+}
+
+.optional-note {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #6b0f1a;
+  margin-bottom: 26px;
+}
+
+/* --------------------
+   Primary CTA Button
+-------------------- */
+.btn {
+  display: block;
+  text-align: center;
+  padding: 16px 26px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #6b0f1a, #f28c65);
+  color: white;
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0 auto;
+  max-width: 320px;
+  box-shadow: 0 14px 30px rgba(107,15,26,0.4);
 }
 
 /* --------------------
    Payment Box
 -------------------- */
-.payment-box, .tracking-box {
-  margin-top: 28px;
-  padding: 22px;
-  border-radius: 20px;
-  background: #f9fff4; /* light pista tint */
-  box-shadow: 0 14px 28px rgba(0,0,0,0.08);
+.payment-box {
+  margin-top: 30px;
+  padding: 24px;
+  border-radius: 24px;
+  background: linear-gradient(180deg, #ffffff, #f0fff5);
+  box-shadow: 0 18px 36px rgba(0,0,0,0.08);
   text-align: center;
+}
+
+.payment-box h2 {
+  margin-top: 0;
+  color: #6b0f1a;
+}
+
+.payment-box h3 {
+  margin-top: 20px;
+  font-size: 1rem;
+  color: #6b0f1a;
 }
 
 /* --------------------
@@ -86,27 +222,60 @@ input:focus, select:focus {
 .qr {
   width: 220px;
   max-width: 100%;
-  margin: 18px auto;
+  margin: 20px auto;
   display: block;
-  border-radius: 16px;
-  box-shadow: 0 10px 24px rgba(0,0,0,0.12);
-}
-
-/* --------------------
-   Text & Closing
--------------------- */
-.intro, .optional-note, .closing {
-  text-align: center;
-  color: #800020; /* wine color */
-  line-height: 1.5;
-  margin-bottom: 16px;
+  border-radius: 18px;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.15);
 }
 
 /* --------------------
    Divider
 -------------------- */
 .divider {
-  margin: 18px 0;
+  margin: 20px 0;
   font-size: 0.85rem;
-  color: #666;
+  color: #6b0f1a;
+}
+
+/* --------------------
+   Bank Details
+-------------------- */
+.bank-details {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: #6b0f1a;
+}
+
+/* --------------------
+   Accent
+-------------------- */
+.vietnam-accent {
+  text-align: center;
+  margin: 16px 0;
+  font-size: 1.1rem;
+  color: #6b0f1a;
+}
+
+/* --------------------
+   Closing Text
+-------------------- */
+.closing {
+  margin-top: 28px;
+  font-size: 0.95rem;
+  text-align: center;
+  color: #6b0f1a;
+}
+
+/* --------------------
+   Desktop Enhancement
+-------------------- */
+@media (min-width: 768px) {
+  .container {
+    max-width: 540px;
+    padding: 38px 34px 46px;
+  }
+
+  h1 {
+    font-size: 2.4rem;
+  }
 }
