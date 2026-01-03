@@ -9,8 +9,8 @@
 
 body {
   font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  background: linear-gradient(160deg, #d4f1be, #e6f7e0, #f0fff5); /* Pista green shades */
-  color: #6b0f1a; /* Wine color for text */
+  background: linear-gradient(160deg, #d4f1be, #e6f7e0, #f0fff5); /* pista green */
+  color: #6b0f1a; /* wine text */
   min-height: 100vh;
   background-attachment: fixed;
 }
@@ -19,12 +19,12 @@ body {
    Container Card
 -------------------- */
 .container {
-  max-width: 450px;
+  max-width: 420px;
   margin: 32px auto;
-  padding: 32px 26px 36px;
-  background: #ffffff;
+  padding: 28px 22px 34px;
+  background: white;
   border-radius: 26px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.08), 0 0 0 1px rgba(107, 15, 26, 0.1);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(107, 15, 26, 0.1);
   animation: floatIn 0.6s ease-out;
 }
 
@@ -47,27 +47,27 @@ body {
 -------------------- */
 h1 {
   text-align: center;
-  font-size: 2.2rem;
-  margin-bottom: 12px;
-  color: #6b0f1a; /* wine */
+  font-size: 2.1rem;
+  margin-bottom: 14px;
+  color: #6b0f1a;
   letter-spacing: 0.5px;
 }
 
 h1::after {
-  content: "💍";
+  content: "💐";
   display: block;
   margin-top: 6px;
   font-size: 1.5rem;
 }
 
 /* --------------------
-   RSVP message on top
+   Message above form
 -------------------- */
 .rsvp-message {
   text-align: center;
   font-size: 0.95rem;
   color: #6b0f1a;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
   line-height: 1.4;
 }
 
@@ -77,7 +77,7 @@ h1::after {
 form {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 16px;
 }
 
 /* --------------------
@@ -85,9 +85,8 @@ form {
 -------------------- */
 label {
   font-size: 0.9rem;
-  font-weight: 700;
+  font-weight: 600;
   color: #6b0f1a;
-  margin-bottom: -6px;
 }
 
 /* --------------------
@@ -96,10 +95,10 @@ label {
 input,
 select {
   width: 100%;
-  padding: 15px 18px;
+  padding: 14px 16px;
   font-size: 1rem;
-  border-radius: 16px;
-  border: 2px solid #a2d5ab; /* light pista green */
+  border-radius: 14px;
+  border: 2px solid #b0e0e6; /* light teal for borders */
   background: #fff;
   transition: all 0.25s ease;
 }
@@ -112,46 +111,43 @@ input:focus,
 select:focus {
   outline: none;
   border-color: #6b0f1a;
-  box-shadow: 0 0 0 4px rgba(107,15,26,0.15), 0 6px 14px rgba(107,15,26,0.12);
-  transform: translateY(-1px);
+  box-shadow: 0 0 0 4px rgba(107, 15, 26, 0.15);
 }
 
 /* --------------------
-   Conditional Section (attending yes)
+   Conditional Section (Yes fields)
 -------------------- */
 #yes-fields {
   margin-top: 10px;
-  padding: 20px;
-  border-radius: 20px;
+  padding: 16px;
+  border-radius: 16px;
   background: linear-gradient(135deg, #f0fff5, #ffffff);
-  border: 2px dashed #a2d5ab;
+  border: 1px dashed #a2d5ab;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
 }
 
 /* --------------------
    Submit Button
 -------------------- */
 button {
-  margin-top: 20px;
-  padding: 17px;
-  font-size: 1.15rem;
-  font-weight: 700;
+  margin-top: 18px;
+  padding: 16px;
+  font-size: 1.1rem;
+  font-weight: 600;
   border-radius: 999px;
   border: none;
   cursor: pointer;
   color: white;
-  background: linear-gradient(135deg, #6b0f1a, #f28c65); /* wine → coral gradient */
-  background-size: 200% 200%;
-  box-shadow: 0 14px 30px rgba(107,15,26,0.4);
-  transition: all 0.25s ease;
+  background: linear-gradient(135deg, #6b0f1a, #f28c65);
+  box-shadow: 0 12px 24px rgba(107,15,26,0.35);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 button:hover {
-  background-position: right center;
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 20px 36px rgba(107,15,26,0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 18px 32px rgba(107,15,26,0.45);
 }
 
 button:active {
@@ -164,15 +160,14 @@ button:active {
 .intro {
   text-align: center;
   font-size: 1.05rem;
-  margin: 20px 0;
-  color: #6b0f1a;
+  margin: 18px 0;
 }
 
 .optional-note {
   text-align: center;
   font-size: 0.95rem;
   color: #6b0f1a;
-  margin-bottom: 26px;
+  margin-bottom: 24px;
 }
 
 /* --------------------
@@ -187,21 +182,21 @@ button:active {
   color: white;
   text-decoration: none;
   font-size: 1.05rem;
-  font-weight: 700;
+  font-weight: 600;
   margin: 0 auto;
   max-width: 320px;
-  box-shadow: 0 14px 30px rgba(107,15,26,0.4);
+  box-shadow: 0 12px 24px rgba(107,15,26,0.35);
 }
 
 /* --------------------
    Payment Box
 -------------------- */
 .payment-box {
-  margin-top: 30px;
-  padding: 24px;
-  border-radius: 24px;
-  background: linear-gradient(180deg, #ffffff, #f0fff5);
-  box-shadow: 0 18px 36px rgba(0,0,0,0.08);
+  margin-top: 28px;
+  padding: 22px;
+  border-radius: 20px;
+  background: linear-gradient(180deg, #fff, #f0fff5);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.08);
   text-align: center;
 }
 
@@ -211,7 +206,7 @@ button:active {
 }
 
 .payment-box h3 {
-  margin-top: 20px;
+  margin-top: 18px;
   font-size: 1rem;
   color: #6b0f1a;
 }
@@ -222,17 +217,17 @@ button:active {
 .qr {
   width: 220px;
   max-width: 100%;
-  margin: 20px auto;
+  margin: 18px auto;
   display: block;
-  border-radius: 18px;
-  box-shadow: 0 14px 28px rgba(0,0,0,0.15);
+  border-radius: 16px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
 }
 
 /* --------------------
    Divider
 -------------------- */
 .divider {
-  margin: 20px 0;
+  margin: 18px 0;
   font-size: 0.85rem;
   color: #6b0f1a;
 }
@@ -242,7 +237,7 @@ button:active {
 -------------------- */
 .bank-details {
   font-size: 0.9rem;
-  line-height: 1.7;
+  line-height: 1.6;
   color: #6b0f1a;
 }
 
@@ -251,8 +246,8 @@ button:active {
 -------------------- */
 .vietnam-accent {
   text-align: center;
-  margin: 16px 0;
-  font-size: 1.1rem;
+  margin: 14px 0;
+  font-size: 1rem;
   color: #6b0f1a;
 }
 
@@ -260,7 +255,7 @@ button:active {
    Closing Text
 -------------------- */
 .closing {
-  margin-top: 28px;
+  margin-top: 26px;
   font-size: 0.95rem;
   text-align: center;
   color: #6b0f1a;
@@ -271,11 +266,11 @@ button:active {
 -------------------- */
 @media (min-width: 768px) {
   .container {
-    max-width: 540px;
-    padding: 38px 34px 46px;
+    max-width: 520px;
+    padding: 36px 32px 42px;
   }
 
   h1 {
-    font-size: 2.4rem;
+    font-size: 2.3rem;
   }
 }
