@@ -65,28 +65,32 @@ label {
 /* --------------------
    Inputs & Selects
 -------------------- */
+/* --------------------
+   Inputs & Selects
+-------------------- */
 input,
 select {
   width: 100%;
   padding: 15px 16px;
   font-size: 1rem;
   border-radius: 16px;
-  border: 2px solid #0d0e1f; /* same as container (invisible) */
+  border: 2px solid #f8f8f8; /* soft white border */
   background: #0d0e1f; /* dark box */
   color: #f8f8f8; /* soft white text */
   transition: all 0.25s ease;
 }
 
 input::placeholder {
-  color: #bbb; /* lighter placeholder */
+  color: #bbb; /* lighter placeholder for contrast */
 }
 
 input:focus,
 select:focus {
   outline: none;
-  border-color: #444; /* subtle highlight on focus */
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+  border-color: #ffffff; /* slightly brighter on focus */
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.15);
 }
+
 
 /* --------------------
    Conditional Section
