@@ -2,11 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Honeymoon Fund</title>
 
-  
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,7 +14,7 @@
   <h1>Thank You</h1>
 
   <div class="vietnam-accent">
-    <span>✧ ✧ ✧</span>
+    ✧ ✧ ✧
   </div>
 
   <p class="intro">
@@ -25,23 +24,20 @@
 
   <p class="optional-note">
     This is entirely optional, but if you wish to contribute to our honeymoon,
-    we would be truly grateful.
+    we would be truly grateful. We do not have a gift registry.
   </p>
 
   <div class="payment-box">
     <h2>Scan to Contribute</h2>
-
     <img src="qr-code.jpeg" alt="Bank QR Code" class="qr">
-
     <p>
       <a href="qr-code.jpeg" download="HoneymoonQR" class="btn">Download QR Code</a>
     </p>
-
     <div class="divider">or</div>
 
-    <h3>UPI transfer</h3>
+    <h3>UPI Transfer</h3>
     <p class="bank-details">
-      <strong>UPI ID</strong> sanjana.shetty29-2@okicici<br>
+      <strong>UPI ID:</strong> sanjana.shetty29-2@okicici
     </p>
 
     <h3>Bank Transfer Details</h3>
@@ -52,13 +48,58 @@
       <strong>IFSC:</strong> DCBL0000363<br>
       <strong>Reference:</strong> Honeymoon
     </p>
+
+    <h3>Contact in case of issues</h3>
+    <p class="bank-details">
+      Sanjana: +91 9591671208<br>
+      Harsh: +33 758006595 / +91 9663903307
+    </p>
+  </div>
+
+  <div class="tracking-box">
+    <h2>If you have made a contribution and want to help us keep track of it:</h2>
+    <form id="contribution-form">
+      <label>Did you contribute?</label>
+      <select name="contributed" required>
+        <option value="">Select</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select>
+
+      <label>Your Name</label>
+      <input type="text" name="name" placeholder="Enter your full name" required>
+
+      <button type="submit">Submit</button>
+    </form>
   </div>
 
   <p class="closing">
-    If there are any issues, please feel free to contact us.<br>
     Thank you for your kindness and for being part of our journey!
   </p>
 </div>
+
+<script>
+const contributionForm = document.getElementById("contribution-form");
+
+contributionForm.addEventListener("submit", e => {
+  e.preventDefault();
+  const data = new FormData(contributionForm);
+  const params = new URLSearchParams(data);
+
+  fetch("https://script.google.com/macros/s/AKfycbwdt4oF8dWzeZWMNxMloKpBciPyUtLYZtm0Gya93AowSmM8PG8sQVOhUbBoEKw4Gw6qHQ/exec", {
+    method: "POST",
+    body: params
+  })
+  .then(res => res.json())
+  .then(() => {
+    alert("Thank you! Your contribution info has been recorded.");
+    contributionForm.reset();
+  })
+  .catch(() => {
+    alert("Something went wrong. Please try again.");
+  });
+});
+</script>
 
 </body>
 </html>
