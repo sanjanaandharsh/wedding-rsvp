@@ -1,6 +1,97 @@
 /* --------------------
    Reset & Base
 -------------------- */
+/* --------------------
+   Message above form
+-------------------- */
+.rsvp-message {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #3a3a3a;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+/* --------------------
+   Container Card
+-------------------- */
+.container {
+  max-width: 420px;
+  margin: 32px auto;
+  padding: 28px 22px 34px;
+  background: white;
+  border-radius: 26px;
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.08),
+    0 0 0 1px rgba(60, 180, 200, 0.15); /* updated from pink to teal-ish */
+  animation: floatIn 0.6s ease-out;
+}
+
+/* --------------------
+   Heading
+-------------------- */
+h1 {
+  text-align: center;
+  font-size: 2.1rem;
+  margin-bottom: 14px;
+  color: #2ca6a4; /* teal instead of pink */
+  letter-spacing: 0.5px;
+}
+
+h1::after {
+  content: "💍"; /* change emoji to wedding ring */
+  display: block;
+  margin-top: 6px;
+  font-size: 1.5rem;
+}
+
+/* --------------------
+   Inputs & Selects
+-------------------- */
+input,
+select {
+  width: 100%;
+  padding: 15px 16px;
+  font-size: 1rem;
+  border-radius: 16px;
+  border: 2px solid #b0e0e6; /* light teal */
+  background: #fff;
+  transition: all 0.25s ease;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #2ca6a4;
+  box-shadow:
+    0 0 0 4px rgba(44, 166, 164, 0.2),
+    0 6px 14px rgba(44, 166, 164, 0.15);
+  transform: translateY(-1px);
+}
+
+/* --------------------
+   Submit Button
+-------------------- */
+button {
+  margin-top: 20px;
+  padding: 17px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  background: linear-gradient(135deg, #2ca6a4, #f6a85f); /* teal → coral gradient */
+  background-size: 200% 200%;
+  box-shadow: 0 14px 30px rgba(44, 166, 164, 0.4);
+  transition: all 0.25s ease;
+}
+
+button:hover {
+  background-position: right center;
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 20px 36px rgba(44, 166, 164, 0.5);
+}
 
 body {
   background: red !important;
