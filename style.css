@@ -65,9 +65,6 @@ label {
 /* --------------------
    Inputs & Selects
 -------------------- */
-/* --------------------
-   Inputs & Selects
--------------------- */
 input,
 select {
   width: 100%;
@@ -81,16 +78,15 @@ select {
 }
 
 input::placeholder {
-  color: #bbb; /* lighter placeholder for contrast */
+  color: #bbb; /* lighter placeholder */
 }
 
 input:focus,
 select:focus {
   outline: none;
-  border-color: #ffffff; /* slightly brighter on focus */
+  border-color: #ffffff; /* brighter on focus */
   box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.15);
 }
-
 
 /* --------------------
    Conditional Section
@@ -100,7 +96,7 @@ select:focus {
   padding: 18px;
   border-radius: 20px;
   background: #0d0e1f; /* same dark container */
-  border: 2px solid #0d0e1f; /* invisible border */
+  border: 2px solid #f8f8f8; /* soft white border */
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -118,7 +114,7 @@ button {
   border: none;
   cursor: pointer;
   color: #f8f8f8;
-  background: #0d0e1f; /* blackish/navy button */
+  background: #0d0e1f; /* black/navy button */
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
   transition: all 0.25s ease;
 }
@@ -175,6 +171,7 @@ button:active {
   padding: 24px;
   border-radius: 24px;
   background: #0d0e1f; /* dark box */
+  border: 2px solid #f8f8f8; /* soft white border */
   box-shadow: 0 18px 36px rgba(0, 0, 0, 0.5);
   text-align: center;
 }
